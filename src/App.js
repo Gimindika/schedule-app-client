@@ -1,4 +1,4 @@
-import { Divider, Grid } from "@mui/material";
+import { Button, Divider, Grid } from "@mui/material";
 import { default as React, useEffect } from "react";
 import { FilterMD, FilterXS, Header, ScheduleList } from "./components";
 import { usePersons, useSchedules } from "./hooks";
@@ -27,6 +27,24 @@ function App() {
         type: "reset_state",
         payload: fetchedSchedules,
       });
+
+      // fetchedSchedules.monthlySchedule.weeklySchedule.map((week) => {
+      //   week.map((schedule) => {
+      //     schedule.persons.map((person) => {
+      //       persons.map((p) => {
+      //         if (p.id === person.id) {
+      //           dispatchPerson({
+      //             type: "update_assigned",
+      //             payload: {
+      //               id: person.id,
+      //               type: "increase",
+      //             },
+      //           });
+      //         }
+      //       });
+      //     });
+      //   });
+      // });
     }
   }, [fetchedSchedules]);
 
@@ -48,6 +66,13 @@ function App() {
           />
         )}
       </Grid>
+      <Button
+        variant="contained"
+        // onClick={migratePersons}
+        // onClick={getAllPersonsFB}
+      >
+        Migrate Person
+      </Button>
     </Grid>
   );
 }

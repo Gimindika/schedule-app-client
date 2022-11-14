@@ -13,19 +13,19 @@ export const usePersons = () => {
     }
   };
 
-  const searchPerson = async (text) => {
-    try {
-      let fetchedPersons = [];
-      if (text.length > 2) {
-        fetchedPersons = await searchPersonRequest(text);
-      } else if (text === "") {
-        fetchedPersons = await getAllPersons();
-      }
-      setPersons(fetchedPersons);
-    } catch (error) {
-      console.log("Fail to fetch Persons ", error);
-    }
-  };
+  // const searchPerson = async (text) => {
+  //   try {
+  //     let fetchedPersons = [];
+  //     if (text.length > 2) {
+  //       fetchedPersons = await searchPersonRequest(text);
+  //     } else if (text === "") {
+  //       fetchedPersons = await getAllPersons();
+  //     }
+  //     setPersons(fetchedPersons);
+  //   } catch (error) {
+  //     console.log("Fail to fetch Persons ", error);
+  //   }
+  // };
 
-  return { persons, fetchPersons, searchPerson };
+  return { persons, fetchPersons };
 };

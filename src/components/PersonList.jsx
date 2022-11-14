@@ -30,7 +30,9 @@ export const PersonList = () => {
         >
           <ListItemIcon>
             <Avatar sx={{ bgcolor: profileColor, color: "black" }}>
-              {assignedCount}
+              {assignedCount
+                ? assignedCount
+                : `${name[0].toUpperCase()}${name[1]}`}
             </Avatar>
           </ListItemIcon>
           <ListItemText primary={name} />
